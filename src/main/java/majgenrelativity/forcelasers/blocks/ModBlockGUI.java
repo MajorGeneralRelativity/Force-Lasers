@@ -39,4 +39,10 @@ public class ModBlockGUI extends BlockContainer implements ITileEntityProvider{
         }
         return true;
     }
+
+	// Default render type for BlockContainer is -1 (don't render), change to render
+	@Override
+	public int getRenderType() {
+		return 3;
+	}
 }

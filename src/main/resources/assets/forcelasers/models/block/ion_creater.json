@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "forcelasers:blocks/ion_creater"
-    }
-}

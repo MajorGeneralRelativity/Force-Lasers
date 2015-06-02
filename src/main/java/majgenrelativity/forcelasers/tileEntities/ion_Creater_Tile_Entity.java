@@ -6,14 +6,17 @@ import net.minecraft.item.ItemCoal;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IChatComponent;
 
 
 
-public class ion_Creater_Tile_Entity extends TileEntity implements IInventory {
-
+public class ion_Creater_Tile_Entity extends TileEntity implements IInventory, IUpdatePlayerListBox {
+	// variable used to store ions across all blocks, items, etc.
+	
+	public int force_lasers_ions = 0;
 	
 	private ItemStack[] inv;
 	@Override
@@ -22,6 +25,7 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory {
 		return("ion_creater");
 	}
 
+		
 	@Override
 	public boolean hasCustomName() {
 		// TODO Auto-generated method stub
@@ -147,6 +151,7 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory {
 	                inv[slot] = ItemStack.loadItemStackFromNBT(tag);
 	            }
 	        }
+	        this.force_lasers_ions = tagCompound.getInteger("IonCount");
 	    }
 
 	    @Override
@@ -162,10 +167,27 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory {
 	                stack.writeToNBT(tag);
 	                itemList.appendTag(tag);
 	            }
+	            
 	        }
 	        tagCompound.setTag("Inventory", itemList);
+	        
+            tagCompound.setInteger("IonCount", force_lasers_ions);
 	    }
 public ion_Creater_Tile_Entity() {
 	inv = new ItemStack[1];
+}
+
+
+@Override
+public void update() {
+	// Generate ions whenever loaded
+	force_lasers_ions+=10;
+	
+}
+public int getIons() {
+	return force_lasers_ions;
+}
+public void setIons(int ions) {
+	force_lasers_ions=ions;
 }
 }

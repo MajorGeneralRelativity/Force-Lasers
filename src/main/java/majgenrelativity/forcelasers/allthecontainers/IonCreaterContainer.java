@@ -4,8 +4,11 @@ import majgenrelativity.forcelasers.tileEntities.ion_Creater_Tile_Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class IonCreaterContainer extends Container{
 
@@ -61,9 +64,26 @@ public class IonCreaterContainer extends Container{
     	     for (int i = 0; i < 9; i++) {
     	            addSlotToContainer(new Slot(inventoryPlayer, i, 8 + i * 18, 150));
     	        }
-    	   
-        
     }
+    	     public void detectAndSendChanges() {
+    	         super.detectAndSendChanges();
+
+    	         for (int i = 0; i < this.crafters.size(); ++i)
+    	         {
+    	             ICrafting icrafting = (ICrafting)this.crafters.get(i);
+
+    	            
+    	                 icrafting.sendProgressBarUpdate(this, 1323, this.tileEntity.getIons());
+    	            
+    	         }
+
+    	         
+    }
+    	     @SideOnly(Side.CLIENT)
+    	     public void updateProgressBar(int id, int ions)
+    	     {
+    	         this.tileEntity.setIons(ions);
+    	     }
     public IonCreaterContainer(InventoryPlayer inventoryPlayer, ion_Creater_Tile_Entity tileEntity){
         this.tileEntity = tileEntity;
         addSlotToContainer(new Slot(tileEntity, 0, 33, 18));

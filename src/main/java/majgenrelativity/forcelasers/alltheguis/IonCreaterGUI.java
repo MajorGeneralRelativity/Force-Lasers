@@ -36,6 +36,7 @@ public class IonCreaterGUI extends GuiContainer {
     public void drawGuiContainerForegroundLayer(int x, int y){
     	this.fontRendererObj.drawString(StatCollector.translateToLocal("container." + MainFile.MODID + ":ioncreater.name"), 8, -3, 4210752);
     	this.fontRendererObj.drawString(StatCollector.translateToLocal("container.inventory"), 8, 78, 4210752);
+    	
     }
     
     @Override

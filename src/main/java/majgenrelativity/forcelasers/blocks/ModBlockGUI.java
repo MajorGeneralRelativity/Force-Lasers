@@ -23,12 +23,17 @@ public class ModBlockGUI extends BlockContainer implements ITileEntityProvider{
 		setUnlocalizedName("ion_creater");
 		setCreativeTab(CreativeTabs.tabBlock);
 		setHardness(2F);
+		
 	}
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata){
 		return new ion_Creater_Tile_Entity();
 	}
-	
+	// Default render type for BlockContainer is -1 (don't render), change to render
+		@Override
+		public int getRenderType() {
+			return 3;
+		}
 	//On right click open the GUI (only on the server side and if the player isn't sneaking)
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing facing, float hitX, float hitY, float hitZ) {
@@ -39,10 +44,5 @@ public class ModBlockGUI extends BlockContainer implements ITileEntityProvider{
         }
         return true;
     }
-
-	// Default render type for BlockContainer is -1 (don't render), change to render
-	@Override
-	public int getRenderType() {
-		return 3;
-	}
+	
 }

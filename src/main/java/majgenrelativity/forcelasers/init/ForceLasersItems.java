@@ -10,25 +10,25 @@ public class ForceLasersItems {
 	
 	public static Item focus_matrix;
 	public static Item crystal_matrix;
-	public static Item ionizer;
+	public static Item ionizing_matrix;
 	
 	public static void init(){
 		focus_matrix= new Item().setUnlocalizedName("focus_matrix");
 		crystal_matrix = new Item().setUnlocalizedName("crystal_matrix");
-		ionizer = new Item().setUnlocalizedName("ionizer");
+		ionizing_matrix = new Item().setUnlocalizedName("ionizing_matrix");
 	}
 	
 	public static void register()
 	{
 		GameRegistry.registerItem(focus_matrix, focus_matrix.getUnlocalizedName().substring(5)); //tile.focus_matrix, but substring doesn't read tile, just the rest
 		GameRegistry.registerItem(crystal_matrix, crystal_matrix.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(ionizer, ionizer.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(ionizing_matrix, ionizing_matrix.getUnlocalizedName().substring(5));
 	}
 	public static void registerRenders()
 	{
 		registerRender(focus_matrix);
 		registerRender(crystal_matrix);
-		registerRender(ionizer);
+		registerRender(ionizing_matrix);
 	}
 	public static void registerRender(Item item)
 	{

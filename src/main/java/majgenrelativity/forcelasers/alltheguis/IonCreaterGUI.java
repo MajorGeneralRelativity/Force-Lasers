@@ -25,12 +25,18 @@ public class IonCreaterGUI extends GuiContainer {
 
 	//Draw the background
 	@Override
-	     public void drawGuiContainerBackgroundLayer(float renderPartialTicks, int mouseX, int mouseY){
-	        this.mc.getTextureManager().bindTexture(backgroundimage);
-	         int x = (this.width - xSize)/2;
-	         int y = (this.height - ySize)/2;
-	        drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
-	     }	
+    public void drawGuiContainerBackgroundLayer(float renderPartialTicks, int mouseX, int mouseY){
+       this.mc.getTextureManager().bindTexture(backgroundimage);
+        int x = (this.width - xSize)/2;
+        int y = (this.height - ySize)/2;
+       drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
+       drawTexturedModalRect(1, 1, 1, 1, getProgress(), 10);
+    }	
+	public int getProgress() {
+		
+		return ion_Creater_Tile_Entity.getIons();
+	}
+
 	//Draw the text
     @Override
     public void drawGuiContainerForegroundLayer(int x, int y){

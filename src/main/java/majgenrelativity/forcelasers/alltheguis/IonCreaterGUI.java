@@ -15,6 +15,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class IonCreaterGUI extends GuiContainer {
 
+	private ion_Creater_Tile_Entity tileEntity;
+	
 	private ResourceLocation backgroundimage = new ResourceLocation("forcelasers:textures/gui/ion_creater_gui.png");
 	 private int xSize = 176, ySize = 183;
 	 
@@ -34,7 +36,7 @@ public class IonCreaterGUI extends GuiContainer {
     }	
 	public int getProgress() {
 		
-		return ion_Creater_Tile_Entity.getIons();
+		return tileEntity.getIons();
 	}
 
 	//Draw the text

@@ -5,6 +5,7 @@ import majgenrelativity.forcelasers.alltheguis.GUIs;
 import majgenrelativity.forcelasers.tileEntities.ion_Creater_Tile_Entity;
 import majgenrelativity.forcelasers.tileEntities.ion_Tank_Tile_Entity;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -15,7 +16,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
-public class ion_Storage_Tank extends Block implements ITileEntityProvider{
+public class ion_Storage_Tank extends BlockContainer implements ITileEntityProvider{
 	public ion_Storage_Tank() {
 	super(Material.iron);
 	// GameRegistry.registerBlock(this, "ion_creater");

@@ -21,7 +21,7 @@ public class MainFile {
 	public static CommonProxy proxy;
 	
 	public static final String MODID = "forcelasers";
-    public static final String VERSION = "0.1";
+    public static final String VERSION = "0.2.1";
  
     @Mod.Instance(MODID)
     public static MainFile instance;

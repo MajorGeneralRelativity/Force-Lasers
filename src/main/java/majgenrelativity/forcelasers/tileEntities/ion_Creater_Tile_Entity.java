@@ -183,7 +183,7 @@ public void update() {
 	// Generate ions whenever loaded
 	if (force_lasers_ions<100) 
 	{
-	force_lasers_ions+=10;
+	force_lasers_ions+=1;
 	}
 }
 public int getIons() {

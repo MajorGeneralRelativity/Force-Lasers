@@ -17,6 +17,7 @@ public class GuiHandler implements IGuiHandler{
         TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
         if(tileEntity instanceof ion_Creater_Tile_Entity){  //If The TileEntity is a Laser, open the Laser GUI (Server side)
             return new IonCreaterContainer(player.inventory, (ion_Creater_Tile_Entity) tileEntity);
+            
         }
         return null;
     }

@@ -11,10 +11,7 @@ public class ion_Tank_Tile_Entity extends TileEntity implements IUpdatePlayerLis
 private int force_lasers_ions = 0;
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		if (force_lasers_ions < 100) {
-			force_lasers_ions+=1;
-		}
+		
 	}
 	public int getIons() {
 		
@@ -39,5 +36,10 @@ private int force_lasers_ions = 0;
         tagCompound.setTag("Inventory", itemList);
         
         tagCompound.setInteger("IonCount", force_lasers_ions);
+    }
+    public void pushIons(int ions) {
+    	if (force_lasers_ions < 100) {
+    	force_lasers_ions+=ions;
+    	}
     }
 }

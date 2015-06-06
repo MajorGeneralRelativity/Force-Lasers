@@ -20,6 +20,7 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory, I
 	
 	public int force_lasers_ions = 0;
 	private boolean do_detect_tanks = true;
+	private ion_Tank_Tile_Entity tank1;
 	private ItemStack[] inv;
 	@Override
 	public String getName() {
@@ -177,7 +178,7 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory, I
 	    }
 public ion_Creater_Tile_Entity() {
 	inv = new ItemStack[1];
-	do_detect_tanks=true;
+	
 }
 
 
@@ -189,9 +190,9 @@ public void update() {
 	force_lasers_ions+=1;
 	}
 	if (do_detect_tanks== true) {
-		
+		if(worldObj.getTileEntity(getPos().down()) != null) {
 		if(worldObj.getTileEntity(this.getPos().down()) instanceof ion_Tank_Tile_Entity) {
-			 if(worldObj.getTileEntity(getPos().down()) != null) {
+			 tank1=((ion_Tank_Tile_Entity)worldObj.getTileEntity(this.getPos().down()));
 			MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName()); }
 			else {
 				MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName());
@@ -199,7 +200,9 @@ public void update() {
 		}
 		do_detect_tanks=false;
 	}
-	
+	if (tank1 != null) {
+		tank1.pushIons(1);
+	}
 }
 public int getIons() {
 	return force_lasers_ions;

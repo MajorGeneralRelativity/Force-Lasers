@@ -1,5 +1,6 @@
 package majgenrelativity.forcelasers.tileEntities;
 
+import majgenrelativity.forcelasers.MainFile;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -12,10 +13,11 @@ private int force_lasers_ions = 0;
 	public void update() {
 		// TODO Auto-generated method stub
 		if (force_lasers_ions < 100) {
-			force_lasers_ions+=0.5;
+			force_lasers_ions+=1;
 		}
 	}
 	public int getIons() {
+		
 		return force_lasers_ions;
 	}
 	public void setIons(int ions) {

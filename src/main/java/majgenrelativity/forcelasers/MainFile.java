@@ -1,5 +1,10 @@
 package majgenrelativity.forcelasers;
 
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import majgenrelativity.forcelasers.alltheguis.GuiHandler;
 import majgenrelativity.forcelasers.init.ForceLasersBlocks;
 import majgenrelativity.forcelasers.init.ForceLasersItems;
@@ -50,4 +55,5 @@ public class MainFile {
     {
     	
     }
+    public static Logger logger = LogManager.getLogger(MainFile.MODID);
 }

@@ -20,7 +20,7 @@ public class ion_Storage_Tank extends BlockContainer implements ITileEntityProvi
 	public ion_Storage_Tank() {
 	super(Material.iron);
 	// GameRegistry.registerBlock(this, "ion_creater");
-	setUnlocalizedName("ion_storage_tank");
+	setUnlocalizedName("ion_tank");
 	setCreativeTab(CreativeTabs.tabBlock);
 	setHardness(2F);
 	}

@@ -1,5 +1,6 @@
 package majgenrelativity.forcelasers.tileEntities;
 
+import majgenrelativity.forcelasers.MainFile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemCoal;
@@ -8,6 +9,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IChatComponent;
 
@@ -17,7 +19,7 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory, I
 	// variable used to store ions across all blocks, items, etc.
 	
 	public int force_lasers_ions = 0;
-	
+	private boolean do_detect_tanks = true;
 	private ItemStack[] inv;
 	@Override
 	public String getName() {
@@ -175,6 +177,7 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory, I
 	    }
 public ion_Creater_Tile_Entity() {
 	inv = new ItemStack[1];
+	do_detect_tanks=true;
 }
 
 
@@ -185,6 +188,18 @@ public void update() {
 	{
 	force_lasers_ions+=1;
 	}
+	if (do_detect_tanks== true) {
+		
+		if(worldObj.getTileEntity(this.getPos().down()) instanceof ion_Tank_Tile_Entity) {
+			 if(worldObj.getTileEntity(getPos().down()) != null) {
+			MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName()); }
+			else {
+				MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName());
+		}
+		}
+		do_detect_tanks=false;
+	}
+	
 }
 public int getIons() {
 	return force_lasers_ions;

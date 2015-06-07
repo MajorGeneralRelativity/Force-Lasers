@@ -8,5 +8,6 @@ public void registerRenders() {
 }
 	 public void registerTileEntities(){
 		 GameRegistry.registerTileEntity(ion_Creater_Tile_Entity.class, "ion_creater");
+		 GameRegistry.registerTileEntity(ion_Creater_Tile_Entity.class, "ion_tank");
 		 }
 }

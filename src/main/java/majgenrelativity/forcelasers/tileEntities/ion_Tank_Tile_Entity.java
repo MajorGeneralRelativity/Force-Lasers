@@ -30,11 +30,7 @@ private int force_lasers_ions = 0;
     @Override
     public void writeToNBT(NBTTagCompound tagCompound){
         super.writeToNBT(tagCompound);
-
-        NBTTagList itemList = new NBTTagList();
-        
-        tagCompound.setTag("Inventory", itemList);
-        
+                          
         tagCompound.setInteger("IonCount", force_lasers_ions);
     }
     public void pushIons(int ions) {

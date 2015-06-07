@@ -193,9 +193,10 @@ public void update() {
 		if(worldObj.getTileEntity(getPos().down()) != null) {
 		if(worldObj.getTileEntity(this.getPos().down()) instanceof ion_Tank_Tile_Entity) {
 			 tank1=((ion_Tank_Tile_Entity)worldObj.getTileEntity(this.getPos().down()));
-			MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName()); }
+			// MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName()); 
+			}
 			else {
-				MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName());
+				// MainFile.logger.info(worldObj.getTileEntity(this.getPos().down()).getBlockType().getUnlocalizedName());
 		}
 		}
 		do_detect_tanks=false;

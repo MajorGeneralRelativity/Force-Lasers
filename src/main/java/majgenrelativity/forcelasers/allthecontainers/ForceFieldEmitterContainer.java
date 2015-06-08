@@ -1,6 +1,9 @@
 package majgenrelativity.forcelasers.allthecontainers;
 
+
+import majgenrelativity.forcelasers.tileEntities.Force_Lasers_Field_Emitter_Tile_Entity;
 import majgenrelativity.forcelasers.tileEntities.ion_Creater_Tile_Entity;
+import majgenrelativity.forcelasers.tileEntities.ion_Tank_Tile_Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -10,11 +13,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class IonCreaterContainer extends Container{
-
-    protected ion_Creater_Tile_Entity tileEntity;
-
-    @Override
+public class ForceFieldEmitterContainer extends Container{
+	protected Force_Lasers_Field_Emitter_Tile_Entity tileEntity;
+	@Override
     public ItemStack transferStackInSlot(EntityPlayer player, int slot) {
         ItemStack stack = null;
         Slot slotObject = (Slot) inventorySlots.get(slot);
@@ -84,7 +85,7 @@ public class IonCreaterContainer extends Container{
     	     {
     	         this.tileEntity.setIons(ions);
     	     }
-    public IonCreaterContainer(InventoryPlayer inventoryPlayer, ion_Creater_Tile_Entity tileEntity){
+    public ForceFieldEmitterContainer(InventoryPlayer inventoryPlayer, Force_Lasers_Field_Emitter_Tile_Entity tileEntity){
         this.tileEntity = tileEntity;
         addSlotToContainer(new Slot(tileEntity, 0, 33, 18));
         this.bindPlayerInventory(inventoryPlayer);

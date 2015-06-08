@@ -23,7 +23,7 @@ protected ion_Tank_Tile_Entity tileEntity;
             ICrafting icrafting = (ICrafting)this.crafters.get(i);
 
            
-                icrafting.sendProgressBarUpdate(this, 1325, this.tileEntity.getIons());
+            icrafting.sendProgressBarUpdate(this, 1325, this.tileEntity.getIons());
            
         }
 

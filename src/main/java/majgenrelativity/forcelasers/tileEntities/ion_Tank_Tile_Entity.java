@@ -27,11 +27,12 @@ private int force_lasers_ions = 0;
         this.force_lasers_ions = tagCompound.getInteger("IonCount");
     }
 
-    @Override
+	@Override
     public void writeToNBT(NBTTagCompound tagCompound){
         super.writeToNBT(tagCompound);
-                          
-        tagCompound.setInteger("IonCount", force_lasers_ions);
+
+        
+           tagCompound.setInteger("IonCount", force_lasers_ions);
     }
     public void pushIons(int ions) {
     	if (force_lasers_ions < 100) {

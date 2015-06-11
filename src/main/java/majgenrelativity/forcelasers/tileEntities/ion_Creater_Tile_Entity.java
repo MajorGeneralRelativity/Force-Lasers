@@ -186,12 +186,13 @@ public ion_Creater_Tile_Entity() {
 @Override
 public void update() {
         // Generate ions whenever loaded and there is coal in the slot
-        if (force_lasers_ions<100){
-                if (coal_left==0)
+        if (force_lasers_ions<100) {
+                if (coal_left==0) {
                         if (getStackInSlot(0)!=null) {
                                 decrStackSize(0, 1);
                                 coal_left=20;
                         }
+                }
                 if(coal_left>0){
                         force_lasers_ions+=1;
                         coal_left-=1;
@@ -233,35 +234,36 @@ public void update() {
                 do_detect_tanks=false;
         }
         // these methods transfer ions out of the creator and into adjacent tanks if they have room
-        if (tank1 != null && force_lasers_ions>0) {
-        	if (tank1.getIons()<100)
+        if (tank1 != null && this.force_lasers_ions>0) {
+        	if (tank1.getIons()<100) {
                 tank1.pushIons(1);
-        	force_lasers_ions-=1;
+        	this.force_lasers_ions-=1; }
+        	//MainFile.logger.info(tank1.getIons()); }
         }
-        if (tank2 != null && force_lasers_ions>0) {
-        	if (tank2.getIons()<100)
+        if (tank2 != null && this.force_lasers_ions>0) {
+        	if (tank2.getIons()<100) {
         	tank2.pushIons(1);
-        	force_lasers_ions-=1;
+        	this.force_lasers_ions-=1; }
         }
-        if (tank3 != null && force_lasers_ions>0) {
-        	if (tank3.getIons()<100)
+        if (tank3 != null && this.force_lasers_ions>0) {
+        	if (tank3.getIons()<100) {
         	tank3.pushIons(1);
-        	force_lasers_ions-=1;
+        	this.force_lasers_ions-=1; }
         }
-        if (tank4 != null && force_lasers_ions>0) {
-        	if (tank4.getIons()<100)
+        if (tank4 != null && this.force_lasers_ions>0) {
+        	if (tank4.getIons()<100) {
         	tank4.pushIons(1);
-        	force_lasers_ions-=1;
+        	this.force_lasers_ions-=1; }
         }
-        if (tank5 != null && force_lasers_ions>0) {
-        	if (tank5.getIons()<100)
+        if (tank5 != null && this.force_lasers_ions>0) {
+        	if (tank5.getIons()<100) {
         	tank5.pushIons(1);
-        	force_lasers_ions-=1;
+        	this.force_lasers_ions-=1; }
         }
-        if (tank6 != null && force_lasers_ions>0) {
-        	if (tank5.getIons()<100)
+        if (tank6 != null && this.force_lasers_ions>0) { 
+        	if (tank6.getIons()<100) {
         	tank6.pushIons(1);
-        	force_lasers_ions-=1;
+        	this.force_lasers_ions-=1; }
         }
 }
 public int getIons() {

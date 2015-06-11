@@ -1,5 +1,5 @@
 {
-    "parent": "forcelasers:block/field_emitter",
+    "parent": "forcelasers:block/force_lasers_field_emitter",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

@@ -272,4 +272,7 @@ public int getIons() {
 public void setIons(int ions) {
         force_lasers_ions=ions;
 }
+public void redetect() {
+	do_detect_tanks=true;
+}
 }

@@ -1,5 +1,5 @@
 tile.ion_creater.name=Ion Creator
-container.forcelasers:ion_creater.name=Ion Creator
+container.forcelasers:ioncreater.name=Ion Creator
 tile.ion_storage_tank.name=Ion Storage Tank
 container.forcelasers:iontank.name= Ion Storage Tank
 tile.force_lasers_field_emitter.name=Field Emitter

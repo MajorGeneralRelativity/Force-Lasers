@@ -39,6 +39,13 @@ public static void addRecipes()
     	"A A",
     	'A', Items.iron_ingot, 'B', Items.diamond
     	);
+    	GameRegistry.addRecipe(new ItemStack(ForceLasersItems.crystal_matrix, 2),
+    			"BBB",
+    			"BAB",
+    			"CAC",
+    			'A', Items.diamond, 'B', Items.redstone, 'C', Blocks.glass
+    			
+    			);
     	GameRegistry.addRecipe(new ItemStack(ForceLasersItems.ionizing_matrix),
     			"AEA",
     			"BDB",
@@ -49,7 +56,7 @@ public static void addRecipes()
     			"ABA",
     			"BCB",
     			"ABA",
-    			'A', ForceLasersBlocks.reinforced_obsidian, 'B', Items.redstone, 'C', ForceLasersItems.crystal_matrix
+    			'A', ForceLasersBlocks.reinforced_obsidian, 'B', Items.redstone, 'C', ForceLasersItems.ionizing_matrix
     			);
 }
 }

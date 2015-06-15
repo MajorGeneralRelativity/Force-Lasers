@@ -4,6 +4,7 @@ import java.util.Random;
 
 import majgenrelativity.forcelasers.MainFile;
 import majgenrelativity.forcelasers.alltheguis.GUIs;
+import majgenrelativity.forcelasers.tileEntities.Force_Lasers_Field_Emitter_Tile_Entity;
 import majgenrelativity.forcelasers.tileEntities.ion_Tank_Tile_Entity;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
@@ -20,6 +21,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
+
 public class Force_Field_Emitter extends BlockContainer implements ITileEntityProvider{
 	public Force_Field_Emitter() {
 		super(Material.iron);
@@ -30,7 +32,7 @@ public class Force_Field_Emitter extends BlockContainer implements ITileEntityPr
 		}
 		@Override
 		public TileEntity createNewTileEntity(World world, int metadata){
-			return new ion_Tank_Tile_Entity();
+			return new Force_Lasers_Field_Emitter_Tile_Entity();
 		}
 		// Default render type for BlockContainer is -1 (don't render), change to render
 			@Override

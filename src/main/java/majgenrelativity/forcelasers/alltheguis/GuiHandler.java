@@ -37,7 +37,7 @@ public class GuiHandler implements IGuiHandler{
         else if (tileEntity instanceof ion_Tank_Tile_Entity) {
         	return new IonTankGUI((ion_Tank_Tile_Entity) tileEntity); }
         else if(tileEntity instanceof Force_Lasers_Field_Emitter_Tile_Entity) {
-        	return new ForceFieldEmitterContainer(player.inventory, (Force_Lasers_Field_Emitter_Tile_Entity) tileEntity); }
+        	return new ForceLasersFieldEmitterGUI(player.inventory, (Force_Lasers_Field_Emitter_Tile_Entity) tileEntity); }
         
         return null;
     }

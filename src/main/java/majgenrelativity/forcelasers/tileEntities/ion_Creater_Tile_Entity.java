@@ -23,6 +23,7 @@ public class ion_Creater_Tile_Entity extends TileEntity implements IInventory, I
 	private ion_Tank_Tile_Entity tank1, tank2, tank3, tank4, tank5, tank6;
 	private ItemStack[] inv;
 	private double coal_left = 0;
+	public boolean isIonCreaterActive =true;
 	@Override
 	public String getName() {
 		
@@ -186,6 +187,7 @@ public ion_Creater_Tile_Entity() {
 @Override
 public void update() {
         // Generate ions whenever loaded and there is coal in the slot
+	if (isIonCreaterActive==true) {
         if (force_lasers_ions<100) {
                 if (coal_left==0) {
                         if (getStackInSlot(0)!=null) {
@@ -198,6 +200,7 @@ public void update() {
                         coal_left-=1;
                 }
         }
+	}
  // detect adjacent ion tanks when the Ion Creator is first placed
         if (do_detect_tanks== true) {
                 if(worldObj.getTileEntity(getPos().down()) != null) {

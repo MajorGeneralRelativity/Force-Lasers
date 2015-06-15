@@ -4,6 +4,7 @@ import majgenrelativity.forcelasers.MainFile;
 import majgenrelativity.forcelasers.allthecontainers.ForceFieldEmitterContainer;
 import majgenrelativity.forcelasers.allthecontainers.IonCreaterContainer;
 import majgenrelativity.forcelasers.tileEntities.Force_Lasers_Field_Emitter_Tile_Entity;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -47,4 +48,5 @@ private Force_Lasers_Field_Emitter_Tile_Entity tileEntity;
     public boolean doesGuiPauseGame(){
         return false;
     }
+    
 }

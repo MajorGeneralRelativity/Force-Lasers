@@ -47,4 +47,20 @@ public class IonCreatorPacket implements IMessageHandler<SimpleMessage, IMessage
       buf.writeBoolean(activationBool);
     }
   }
+
+@Override
+public IMessage onMessage(
+		majgenrelativity.forcelasers.allthepackets.SimpleMessage message,
+		MessageContext ctx) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public IMessage onMessage(
+		majgenrelativity.forcelasers.allthepackets.SimpleMessage message,
+		MessageContext ctx) {
+	// TODO Auto-generated method stub
+	return null;
+}
 }

@@ -278,4 +278,12 @@ public void setIons(int ions) {
 public void redetect() {
 	do_detect_tanks=true;
 }
+public void changeActiveBoolean() {
+	if (isIonCreaterActive==true) {
+		isIonCreaterActive=false;
+	}
+	if (isIonCreaterActive==false) {
+		isIonCreaterActive=true;
+	}
+}
 }

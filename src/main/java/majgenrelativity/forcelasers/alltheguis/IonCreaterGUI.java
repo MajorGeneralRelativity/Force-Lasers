@@ -2,6 +2,7 @@ package majgenrelativity.forcelasers.alltheguis;
 
 import majgenrelativity.forcelasers.MainFile;
 import majgenrelativity.forcelasers.allthecontainers.IonCreaterContainer;
+import majgenrelativity.forcelasers.allthepackets.IonCreatorButtonPacket;
 import majgenrelativity.forcelasers.tileEntities.ion_Creater_Tile_Entity;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -60,11 +61,6 @@ public class IonCreaterGUI extends GuiContainer {
     
     @Override
     protected void actionPerformed(GuiButton button) {
-    	if (this.tileEntity.isIonCreaterActive == true) {
-    		this.tileEntity.isIonCreaterActive=false;
-       	}
-    	if (this.tileEntity.isIonCreaterActive == false) {
-    		this.tileEntity.isIonCreaterActive=true;
-    	}
+    	MainFile.IonCreatorButtonChannelVariable.sendToServer(new IonCreatorButtonPacket("foobar"));
     }
 }

@@ -9,6 +9,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -61,6 +62,9 @@ public class IonCreaterGUI extends GuiContainer {
     
     @Override
     protected void actionPerformed(GuiButton button) {
-    	MainFile.IonCreatorButtonChannelVariable.sendToServer(new IonCreatorButtonPacket("foobar"));
+    	final World obj = this.tileEntity.getWorld();
+    	int dimInt;
+    	dimInt=obj.provider.getDimensionId();
+    	MainFile.IonCreatorButtonChannelVariable.sendToServer(new IonCreatorButtonPacket(this.tileEntity.getPos(), dimInt));
     }
 }

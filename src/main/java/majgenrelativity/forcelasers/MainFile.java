@@ -29,7 +29,7 @@ public class MainFile {
 	public static CommonProxy proxy;
 	
 	public static final String MODID = "forcelasers";
-    public static final String VERSION = "0.3.3";
+    public static final String VERSION = "0.4.1";
     public static SimpleNetworkWrapper IonCreatorButtonChannelVariable;
  
     @Mod.Instance(MODID)

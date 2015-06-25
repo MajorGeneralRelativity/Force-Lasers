@@ -1,5 +1,10 @@
 package majgenrelativity.forcelasers.allthepackets;
 
+
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import io.netty.buffer.ByteBuf;
 import majgenrelativity.forcelasers.MainFile;
 import majgenrelativity.forcelasers.tileEntities.ion_Creater_Tile_Entity;
@@ -26,20 +31,20 @@ public class IonCreatorButtonPacket implements IMessage{
 	
 	@Override
     public void fromBytes(ByteBuf buf) {
-		pos = new BlockPos(0, 0, 0);
+		
 		incomingString = ByteBufUtils.readUTF8String(buf); // this class is very useful in general for writing more complex objects
-		String[] parts = incomingString.split("|");
+		String[] parts = incomingString.split("\\|");
 		MainFile.logger.info(incomingString);
-        pos.east(Integer.parseInt(parts[0]));
-        pos.up(Integer.parseInt(parts[1]));
-        pos.south(Integer.parseInt(parts[2]));
+		Arrays.asList(parts).stream().forEach(s -> System.out.println(s));
+		pos = new BlockPos(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
+		dimID = Integer.parseInt(parts[3]);
         tileEntity=((ion_Creater_Tile_Entity)DimensionManager.getWorld(dimID).getTileEntity(pos));
         
 	}
 	
 	@Override
     public void toBytes(ByteBuf buf) {
-        ByteBufUtils.writeUTF8String(buf,  pos.getX() + "|" + pos.getY() + "|" + pos.getX() + "|" + dimID);
+        ByteBufUtils.writeUTF8String(buf, pos.getX() + "|" + pos.getY() + "|" + pos.getZ() + "|" + dimID);
     }
 	
 public static class Handler implements IMessageHandler<IonCreatorButtonPacket, IMessage> {
@@ -50,7 +55,8 @@ public static class Handler implements IMessageHandler<IonCreatorButtonPacket, I
         public IMessage onMessage(IonCreatorButtonPacket message, MessageContext ctx) {
         	
         	MainFile.logger.info("packet received");
-        	//tileEntity.changeActiveBoolean();
+        	MainFile.logger.info(pos);
+        	MainFile.logger.info(tileEntity);
             
             return null; // no response in this case
         }

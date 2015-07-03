@@ -39,7 +39,9 @@ public class IonCreatorButtonPacket implements IMessage{
 		pos = new BlockPos(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts[2]));
 		dimID = Integer.parseInt(parts[3]);
         tileEntity=((ion_Creater_Tile_Entity)DimensionManager.getWorld(dimID).getTileEntity(pos));
-        
+        MainFile.logger.info(pos);
+        MainFile.logger.info(tileEntity);
+        tileEntity.changeActiveBoolean();
 	}
 	
 	@Override
@@ -48,15 +50,13 @@ public class IonCreatorButtonPacket implements IMessage{
     }
 	
 public static class Handler implements IMessageHandler<IonCreatorButtonPacket, IMessage> {
-        private ion_Creater_Tile_Entity tileEntity;
-        private BlockPos pos;
-        
+                
         @Override
         public IMessage onMessage(IonCreatorButtonPacket message, MessageContext ctx) {
         	
         	MainFile.logger.info("packet received");
-        	MainFile.logger.info(pos);
-        	MainFile.logger.info(tileEntity);
+        	
+        	
             
             return null; // no response in this case
         }

@@ -22,7 +22,7 @@ public class IonCreaterGUI extends GuiContainer {
 	
 	private ResourceLocation backgroundimage = new ResourceLocation("forcelasers:textures/gui/ion_creater_gui.png");
 	 private int xSize = 176, ySize = 183;
-	 
+	 private int oldIons=0;
 	public IonCreaterGUI(InventoryPlayer playerInventory, ion_Creater_Tile_Entity tileEntity) {
 		super(new IonCreaterContainer(playerInventory, tileEntity));
 		this.tileEntity = tileEntity;
@@ -38,8 +38,10 @@ public class IonCreaterGUI extends GuiContainer {
        drawTexturedModalRect(195, 55, 1, 1, getProgress(), 10);
     }	
 	public int getProgress() {
-		
-		return tileEntity.getIons();
+		if (tileEntity.isIonCreaterActive==true) {
+			oldIons=tileEntity.getIons();
+		}
+		return oldIons;
 	}
 
 	//Draw the text

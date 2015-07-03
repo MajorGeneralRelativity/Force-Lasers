@@ -186,8 +186,10 @@ public ion_Creater_Tile_Entity() {
 
 @Override
 public void update() {
+	//MainFile.logger.info(isIonCreaterActive);
         // Generate ions whenever loaded and there is coal in the slot
 	if (isIonCreaterActive==true) {
+		MainFile.logger.info(coal_left);
         if (force_lasers_ions<100) {
                 if (coal_left==0) {
                         if (getStackInSlot(0)!=null) {
@@ -279,6 +281,6 @@ public void redetect() {
 	do_detect_tanks=true;
 }
 public void changeActiveBoolean() {
-	isIonCreaterActive = !isIonCreaterActive;
+	isIonCreaterActive=!isIonCreaterActive;
 }
 }
